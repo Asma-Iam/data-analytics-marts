@@ -1,0 +1,38 @@
+ version: 2
+
+ models:
+  - name: dim_customers
+    description: "Dimension client contenant des informations personnelles et des métriques agrégées de ses commandes."
+    columns:
+      - name: customer_id
+        description: "Identifiant unique du client, référence à la clé primaire dans la table source."
+      - name: first_name
+        description: "Prénom du client."
+      - name: last_name
+        description: "Nom de famille du client."
+      - name: first_order_date
+        description: "Date de la première commande passée par le client."
+      - name: most_recent_order_date
+        description: "Date de la dernière commande passée par le client."
+      - name: number_of_orders
+        description: "Nombre total de commandes effectuées par le client."
+      - name: lifetime_value
+        description: "Montant total dépensé par le client sur toutes ses commandes."
+
+  - name: fct_orders
+    description: "Fait de commandes. Contient chaque commande avec des informations client pour analyse détaillée."
+    columns:
+      - name: order_id
+        description: "Identifiant unique de la commande."
+      - name: customer_id
+        description: "Référence à l'identifiant du client dans la table dim_customers."
+      - name: first_name
+        description: "Prénom du client ayant passé la commande, pour affichage."
+      - name: last_name
+        description: "Nom de famille du client ayant passé la commande, pour affichage."
+      - name: order_date
+        description: "Date à laquelle la commande a été effectuée."
+      - name: status
+        description: "Statut actuel de la commande (exemple : livrée, en préparation)."
+      - name: total_amount
+        description: "Montant total de la commande (en euros ou la devise utilisée)."
