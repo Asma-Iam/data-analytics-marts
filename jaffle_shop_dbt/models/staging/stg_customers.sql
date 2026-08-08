@@ -1,4 +1,5 @@
---{{ config(materialized='view') }}
+{{ config(materialized='view') }}
+
 WITH source AS (
     SELECT * FROM {{ source('jaffle_shop', 'customers') }}
 )
