@@ -1,6 +1,6 @@
  version: 2
 
- models:
+models:
   - name: dim_customers
     description: "Dimension client contenant des informations personnelles et des métriques agrégées de ses commandes."
     columns:
